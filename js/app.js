@@ -60,7 +60,7 @@ fourthImageDOMElement.classList.add('d-none')
 fifthImageDOMElement.classList.add('d-none')
 
 
-// dichiaro una variabile contatore di immagine
+// dichiaro una variabile contatore di immagine settata sul valore della prima immagine
 let ImageCounter = 0
 
 //controllo forward per il carosello
