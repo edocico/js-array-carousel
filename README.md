@@ -1,0 +1,1 @@
+# Carosello Mono Array
