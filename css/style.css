@@ -21,6 +21,7 @@ header {
 .app-main {
     flex-grow: 1;
     display: flex;
+    overflow: hidden;
 }
 
 .photo-section {
@@ -30,6 +31,7 @@ header {
     justify-content: center;
     gap: 60px;
     background-color: whitesmoke;
+    overflow: auto;
 }
 
 .side-bar {
