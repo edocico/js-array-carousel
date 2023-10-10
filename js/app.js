@@ -60,18 +60,21 @@ fourthImageDOMElement.classList.add('d-none')
 fifthImageDOMElement.classList.add('d-none')
 
 
-
+// dichiaro una variabile contatore di immagine
 let ImageCounter = 0
 
 //controllo forward per il carosello
 rightArrowDOMElement.addEventListener('click', function () {
-    
+    // rimuovo l'immagine presente a schermo
     imageDOMElement[ImageCounter].classList.remove('d-block')
     imageDOMElement[ImageCounter].classList.add('d-none')
+    //incremento il contatore
     ImageCounter++
+    // se il contatore è maggiore o uguale al numero di elementi del carosello allora il counter torna al valore zero 
     if (ImageCounter >= imageDOMElement.length) {
         ImageCounter = 0
     }
+    //faccio apparire a schermo l'immagine successiva
     imageDOMElement[ImageCounter].classList.remove('d-none')
     imageDOMElement[ImageCounter].classList.add('d-block')
 
@@ -81,13 +84,16 @@ rightArrowDOMElement.addEventListener('click', function () {
 
 // controllo backward per il carosello
 leftArrowDOMElement.addEventListener('click', function() {
-
+    // rimuovo l'immagine presente a schermo
     imageDOMElement[ImageCounter].classList.remove('d-block')
     imageDOMElement[ImageCounter].classList.add('d-none')
+    //decremento il counter
     ImageCounter--
+    // in questo caso se il valore del counter è minore di 0 allora assumerà il valore del numero degli elementi del carosello meno 1
     if (ImageCounter < 0) {
         ImageCounter = imageDOMElement.length - 1
     }
+    // faccio apparire a schermo l'immagine precedente
     imageDOMElement[ImageCounter].classList.remove('d-none')
     imageDOMElement[ImageCounter].classList.add('d-block')
 
