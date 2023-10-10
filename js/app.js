@@ -41,6 +41,7 @@ const imageDOMElement = document.getElementsByClassName('image')
 console.log(imageDOMElement)
 const firstImageDOMElement = imageDOMElement[0]
 console.log(firstImageDOMElement)
+console.log(imageDOMElement[0])
 const secondImageDOMElement = imageDOMElement[1]
 console.log(secondImageDOMElement)
 const thirdImageDOMElement = imageDOMElement[2]
@@ -49,3 +50,45 @@ const fourthImageDOMElement = imageDOMElement[3]
 console.log(fourthImageDOMElement)
 const fifthImageDOMElement = imageDOMElement[4]
 console.log(fifthImageDOMElement)
+
+// applico display none a tutte le immagini tranne la prima alla quale applico display block
+
+firstImageDOMElement.classList.add('d-block')
+secondImageDOMElement.classList.add('d-none')
+thirdImageDOMElement.classList.add('d-none')
+fourthImageDOMElement.classList.add('d-none')
+fifthImageDOMElement.classList.add('d-none')
+
+
+
+let ImageCounter = 0
+
+//controllo forward per il carosello
+rightArrowDOMElement.addEventListener('click', function () {
+    
+    imageDOMElement[ImageCounter].classList.remove('d-block')
+    imageDOMElement[ImageCounter].classList.add('d-none')
+    ImageCounter++
+    if (ImageCounter >= imageDOMElement.length) {
+        ImageCounter = 0
+    }
+    imageDOMElement[ImageCounter].classList.remove('d-none')
+    imageDOMElement[ImageCounter].classList.add('d-block')
+
+    
+    
+})
+
+// controllo backward per il carosello
+leftArrowDOMElement.addEventListener('click', function() {
+
+    imageDOMElement[ImageCounter].classList.remove('d-block')
+    imageDOMElement[ImageCounter].classList.add('d-none')
+    ImageCounter--
+    if (ImageCounter < 0) {
+        ImageCounter = imageDOMElement.length - 1
+    }
+    imageDOMElement[ImageCounter].classList.remove('d-none')
+    imageDOMElement[ImageCounter].classList.add('d-block')
+
+})
