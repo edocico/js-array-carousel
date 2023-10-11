@@ -32,6 +32,7 @@ header {
     gap: 60px;
     background-color: whitesmoke;
     overflow: auto;
+   
 }
 
 .side-bar {
@@ -51,13 +52,15 @@ img {
 }
 
 .left-arrow {
-    align-self: center;
+    align-self: flex-start;
     font-size: 40px;
+    
 }
 
 .right-arrow {
-    align-self: center;
+    align-self: flex-start;
     font-size: 40px;
+   
 }
 
 .left-arrow:hover {
@@ -89,4 +92,16 @@ img {
 .image {
     object-fit: cover;
     aspect-ratio: 16/10;
+}
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.thumbnail-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 20px;
 }
