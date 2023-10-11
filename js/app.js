@@ -1,16 +1,16 @@
-console.log('ok')
+//console.log('ok')
 // recupero elementi necessari dal DOM
 const leftArrowDOMElement = document.querySelector('.left-arrow')
-console.log(leftArrowDOMElement)
+//console.log(leftArrowDOMElement)
 
 const rightArrowDOMElement = document.querySelector('.right-arrow')
-console.log(rightArrowDOMElement)
+//console.log(rightArrowDOMElement)
 
 const imgBoxDOMElement = document.querySelector('.img-box')
-console.log(imgBoxDOMElement)
+//console.log(imgBoxDOMElement)
 
 const thumbBoxDOMElement = document.querySelector('.thumbnail-box')
-console.log(thumbBoxDOMElement)
+//console.log(thumbBoxDOMElement)
 
 // dichiaro e inizializzo array delle immagini 
 const imagesArray = [
@@ -21,48 +21,48 @@ const imagesArray = [
     './img/05.webp',
 ]
 
-console.log(imagesArray)
+//console.log(imagesArray)
 
 // apro un ciclo for per ciclare l'array
 
 for (let i = 0; i < imagesArray.length; i++) {
-    console.log(i)
+    //console.log(i)
     // ad ogni iterazione recupero un elemento dall'array
     const currentImage = imagesArray[i]
-    console.log(currentImage)
+    //console.log(currentImage)
     // dichiaro una variabile alla quale passo una stringa contente il valore dell'indice ottenuto ad ogni iterazione del ciclo
     const htmlString = `<img class="image" src="${currentImage}">`
-    console.log(htmlString)
+    //console.log(htmlString)
     const thumbString = `<figure class="figure-box">
                             <img class="thumb-img" src="${currentImage}">
                             <div class="overlay"></div>
                          </figure>`
-    console.log(thumbString)
+    //console.log(thumbString)
     // passo tutti i valori della variabile precedente all'innerhtml del DOM element desiderato
     imgBoxDOMElement.innerHTML += htmlString
-    console.log(imgBoxDOMElement)
+    //console.log(imgBoxDOMElement)
     thumbBoxDOMElement.innerHTML += thumbString
     
 }
 
 // recupero dal DOM tutti gli elementi precedentemente inseriti
 const imageDOMElement = document.getElementsByClassName('image')
-console.log(imageDOMElement)
+//console.log(imageDOMElement)
 const firstImageDOMElement = imageDOMElement[0]
-console.log(firstImageDOMElement)
-console.log(imageDOMElement[0])
+//console.log(firstImageDOMElement)
+//console.log(imageDOMElement[0])
 const secondImageDOMElement = imageDOMElement[1]
-console.log(secondImageDOMElement)
+//console.log(secondImageDOMElement)
 const thirdImageDOMElement = imageDOMElement[2]
-console.log(thirdImageDOMElement)
+//console.log(thirdImageDOMElement)
 const fourthImageDOMElement = imageDOMElement[3]
-console.log(fourthImageDOMElement)
+//console.log(fourthImageDOMElement)
 const fifthImageDOMElement = imageDOMElement[4]
-console.log(fifthImageDOMElement)
+//console.log(fifthImageDOMElement)
 
 // recuopero dal DOM anche le immagini del thumbnail
 const thumbImagesDOMElement = document.getElementsByClassName('thumb-img')
-console.log(thumbImagesDOMElement)
+//console.log(thumbImagesDOMElement)
 const firstThumbDOMElement = thumbImagesDOMElement[0]
 const secondThumbDOMElement = thumbImagesDOMElement[1]
 const thirdThumbDOMElement = thumbImagesDOMElement[2]
@@ -77,10 +77,10 @@ thirdImageDOMElement.classList.add('d-none')
 fourthImageDOMElement.classList.add('d-none')
 fifthImageDOMElement.classList.add('d-none')
 
-//
 
+// recupero dal DOM gli elementi overlay
 const overlayDOMElement = document.querySelectorAll('.overlay')
-console.log(overlayDOMElement)
+//console.log(overlayDOMElement)
 overlayDOMElement[0].classList.add('d-none')
 
 
@@ -92,6 +92,7 @@ rightArrowDOMElement.addEventListener('click', function () {
     // rimuovo l'immagine presente a schermo
     imageDOMElement[ImageCounter].classList.remove('d-block')
     imageDOMElement[ImageCounter].classList.add('d-none')
+    //aggiungo l'overlay dal thumbnail nella sidebar
     overlayDOMElement[ImageCounter].classList.remove('d-none')
     overlayDOMElement[ImageCounter].classList.add('d-block')
     //incremento il contatore
@@ -103,6 +104,7 @@ rightArrowDOMElement.addEventListener('click', function () {
     //faccio apparire a schermo l'immagine successiva
     imageDOMElement[ImageCounter].classList.remove('d-none')
     imageDOMElement[ImageCounter].classList.add('d-block')
+    //rimuovo l'overlay dalla thumbnail successiva
     overlayDOMElement[ImageCounter].classList.add('d-none')
     
     
@@ -113,6 +115,7 @@ leftArrowDOMElement.addEventListener('click', function() {
     // rimuovo l'immagine presente a schermo
     imageDOMElement[ImageCounter].classList.remove('d-block')
     imageDOMElement[ImageCounter].classList.add('d-none')
+    // aggiungo l'overlay al thumbnail
     overlayDOMElement[ImageCounter].classList.remove('d-none')
     overlayDOMElement[ImageCounter].classList.add('d-block')
     //decremento il counter
@@ -124,6 +127,7 @@ leftArrowDOMElement.addEventListener('click', function() {
     // faccio apparire a schermo l'immagine precedente
     imageDOMElement[ImageCounter].classList.remove('d-none')
     imageDOMElement[ImageCounter].classList.add('d-block')
+    // rimuovo l'overlay dall'immagine precedente
     overlayDOMElement[ImageCounter].classList.add('d-none')
 
 })
