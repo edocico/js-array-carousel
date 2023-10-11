@@ -124,3 +124,7 @@ img {
 .figure-box {
     position: relative;
 }
+
+.box-shadow {
+    box-shadow: 5px 5px 5px black;
+}

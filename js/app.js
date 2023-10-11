@@ -80,9 +80,10 @@ fifthImageDOMElement.classList.add('d-none')
 
 // recupero dal DOM gli elementi overlay
 const overlayDOMElement = document.querySelectorAll('.overlay')
+const overlayBoxDOMElement = document.querySelectorAll('.figure-box')
 //console.log(overlayDOMElement)
 overlayDOMElement[0].classList.add('d-none')
-
+overlayBoxDOMElement[0].classList.add('box-shadow')
 
 // dichiaro una variabile contatore di immagine settata sul valore della prima immagine
 let ImageCounter = 0
@@ -95,6 +96,7 @@ rightArrowDOMElement.addEventListener('click', function () {
     //aggiungo l'overlay dal thumbnail nella sidebar
     overlayDOMElement[ImageCounter].classList.remove('d-none')
     overlayDOMElement[ImageCounter].classList.add('d-block')
+    overlayBoxDOMElement[ImageCounter].classList.remove('box-shadow')
     //incremento il contatore
     ImageCounter++
     // se il contatore è maggiore o uguale al numero di elementi del carosello allora il counter torna al valore zero 
@@ -106,6 +108,7 @@ rightArrowDOMElement.addEventListener('click', function () {
     imageDOMElement[ImageCounter].classList.add('d-block')
     //rimuovo l'overlay dalla thumbnail successiva
     overlayDOMElement[ImageCounter].classList.add('d-none')
+    overlayBoxDOMElement[ImageCounter].classList.add('box-shadow')
     
     
 })
@@ -118,6 +121,7 @@ leftArrowDOMElement.addEventListener('click', function() {
     // aggiungo l'overlay al thumbnail
     overlayDOMElement[ImageCounter].classList.remove('d-none')
     overlayDOMElement[ImageCounter].classList.add('d-block')
+    overlayBoxDOMElement[ImageCounter].classList.remove('box-shadow')
     //decremento il counter
     ImageCounter--
     // in questo caso se il valore del counter è minore di 0 allora assumerà il valore del numero degli elementi del carosello meno 1
@@ -129,6 +133,7 @@ leftArrowDOMElement.addEventListener('click', function() {
     imageDOMElement[ImageCounter].classList.add('d-block')
     // rimuovo l'overlay dall'immagine precedente
     overlayDOMElement[ImageCounter].classList.add('d-none')
+    overlayBoxDOMElement[ImageCounter].classList.add('box-shadow')
 
 })
 
