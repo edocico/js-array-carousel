@@ -32,7 +32,10 @@ for (let i = 0; i < imagesArray.length; i++) {
     // dichiaro una variabile alla quale passo una stringa contente il valore dell'indice ottenuto ad ogni iterazione del ciclo
     const htmlString = `<img class="image" src="${currentImage}">`
     console.log(htmlString)
-    const thumbString = `<img class="thumb-img" src="${currentImage}">`
+    const thumbString = `<figure class="figure-box">
+                            <img class="thumb-img" src="${currentImage}">
+                            <div class="overlay">a</div>
+                         </figure>`
     console.log(thumbString)
     // passo tutti i valori della variabile precedente all'innerhtml del DOM element desiderato
     imgBoxDOMElement.innerHTML += htmlString
@@ -61,6 +64,11 @@ console.log(fifthImageDOMElement)
 // recuopero dal DOM anche le immagini del thumbnail
 const thumbImagesDOMElement = document.getElementsByClassName('thumb-img')
 console.log(thumbImagesDOMElement)
+const firstThumbDOMElement = thumbImagesDOMElement[0]
+const secondThumbDOMElement = thumbImagesDOMElement[1]
+const thirdThumbDOMElement = thumbImagesDOMElement[2]
+const fourthThumbDOMElement = thumbImagesDOMElement[3]
+const fifthThumbDOMElement = thumbImagesDOMElement[4]
 
 // applico display none a tutte le immagini tranne la prima alla quale applico display block
 
@@ -69,6 +77,8 @@ secondImageDOMElement.classList.add('d-none')
 thirdImageDOMElement.classList.add('d-none')
 fourthImageDOMElement.classList.add('d-none')
 fifthImageDOMElement.classList.add('d-none')
+
+// 
 
 
 // dichiaro una variabile contatore di immagine settata sul valore della prima immagine
