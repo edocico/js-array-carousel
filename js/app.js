@@ -33,11 +33,15 @@ for (let i = 0; i < imagesArray.length; i++) {
     // dichiaro una variabile alla quale passo una stringa contente il valore dell'indice ottenuto ad ogni iterazione del ciclo
     const htmlString = `<img class="image" src="${currentImage}">`
     console.log(htmlString)
+    const thumbString = `<figure class="figure-box">
+                            <img class="thumb-img" src="${currentImage}">
+                            <div class="overlay"></div>
+                         </figure>`
+    console.log(thumbString)
     // passo tutti i valori della variabile precedente all'innerhtml del DOM element desiderato
     imgBoxDOMElement.innerHTML += htmlString
-    thumbBoxDOMElement.innerHTML += htmlString
     console.log(imgBoxDOMElement)
-    
+    thumbBoxDOMElement.innerHTML += thumbString
     
 }
 
@@ -56,6 +60,15 @@ console.log(fourthImageDOMElement)
 const fifthImageDOMElement = imageDOMElement[4]
 console.log(fifthImageDOMElement)
 
+// recuopero dal DOM anche le immagini del thumbnail
+const thumbImagesDOMElement = document.getElementsByClassName('thumb-img')
+console.log(thumbImagesDOMElement)
+const firstThumbDOMElement = thumbImagesDOMElement[0]
+const secondThumbDOMElement = thumbImagesDOMElement[1]
+const thirdThumbDOMElement = thumbImagesDOMElement[2]
+const fourthThumbDOMElement = thumbImagesDOMElement[3]
+const fifthThumbDOMElement = thumbImagesDOMElement[4]
+
 // applico display none a tutte le immagini tranne la prima alla quale applico display block
 
 firstImageDOMElement.classList.add('d-block')
@@ -63,6 +76,12 @@ secondImageDOMElement.classList.add('d-none')
 thirdImageDOMElement.classList.add('d-none')
 fourthImageDOMElement.classList.add('d-none')
 fifthImageDOMElement.classList.add('d-none')
+
+//
+
+const overlayDOMElement = document.querySelectorAll('.overlay')
+console.log(overlayDOMElement)
+overlayDOMElement[0].classList.add('d-none')
 
 
 // dichiaro una variabile contatore di immagine settata sul valore della prima immagine
@@ -73,6 +92,8 @@ rightArrowDOMElement.addEventListener('click', function () {
     // rimuovo l'immagine presente a schermo
     imageDOMElement[ImageCounter].classList.remove('d-block')
     imageDOMElement[ImageCounter].classList.add('d-none')
+    overlayDOMElement[ImageCounter].classList.remove('d-none')
+    overlayDOMElement[ImageCounter].classList.add('d-block')
     //incremento il contatore
     ImageCounter++
     // se il contatore è maggiore o uguale al numero di elementi del carosello allora il counter torna al valore zero 
@@ -82,7 +103,7 @@ rightArrowDOMElement.addEventListener('click', function () {
     //faccio apparire a schermo l'immagine successiva
     imageDOMElement[ImageCounter].classList.remove('d-none')
     imageDOMElement[ImageCounter].classList.add('d-block')
-
+    overlayDOMElement[ImageCounter].classList.add('d-none')
     
     
 })
@@ -92,6 +113,8 @@ leftArrowDOMElement.addEventListener('click', function() {
     // rimuovo l'immagine presente a schermo
     imageDOMElement[ImageCounter].classList.remove('d-block')
     imageDOMElement[ImageCounter].classList.add('d-none')
+    overlayDOMElement[ImageCounter].classList.remove('d-none')
+    overlayDOMElement[ImageCounter].classList.add('d-block')
     //decremento il counter
     ImageCounter--
     // in questo caso se il valore del counter è minore di 0 allora assumerà il valore del numero degli elementi del carosello meno 1
@@ -101,6 +124,7 @@ leftArrowDOMElement.addEventListener('click', function() {
     // faccio apparire a schermo l'immagine precedente
     imageDOMElement[ImageCounter].classList.remove('d-none')
     imageDOMElement[ImageCounter].classList.add('d-block')
+    overlayDOMElement[ImageCounter].classList.add('d-none')
 
 })
 

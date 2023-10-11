@@ -105,3 +105,22 @@ img {
     gap: 5px;
     padding-top: 20px;
 }
+
+.thumb-img {
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+}
+
+.figure-box {
+    position: relative;
+}
