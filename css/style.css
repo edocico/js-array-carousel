@@ -105,3 +105,8 @@ img {
     gap: 5px;
     padding-top: 20px;
 }
+
+.thumb-img {
+    aspect-ratio: 16/10;
+    object-fit: cover;
+}
