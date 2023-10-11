@@ -103,16 +103,3 @@ leftArrowDOMElement.addEventListener('click', function() {
 
 // aside thumbnail box
 
-for (let i = 0; i < imagesArray.length; i++) {
-    console.log(i)
-    // ad ogni iterazione recupero un elemento dall'array
-    const currentImage = imagesArray[i]
-    console.log(currentImage)
-    // dichiaro una variabile alla quale passo una stringa contente il valore dell'indice ottenuto ad ogni iterazione del ciclo
-    const htmlString = `<img class="image" src="${currentImage}">`
-    console.log(htmlString)
-    // passo tutti i valori della variabile precedente all'innerhtml del DOM element desiderato
-    thumbBoxDOMElement.innerHTML += htmlString
-    console.log(imgBoxDOMElement)
-    
-}
