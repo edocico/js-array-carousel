@@ -10,6 +10,7 @@ const imgBoxDOMElement = document.querySelector('.img-box')
 console.log(imgBoxDOMElement)
 
 const thumbBoxDOMElement = document.querySelector('.thumbnail-box')
+console.log(thumbBoxDOMElement)
 
 // dichiaro e inizializzo array delle immagini 
 const imagesArray = [
@@ -34,7 +35,9 @@ for (let i = 0; i < imagesArray.length; i++) {
     console.log(htmlString)
     // passo tutti i valori della variabile precedente all'innerhtml del DOM element desiderato
     imgBoxDOMElement.innerHTML += htmlString
+    thumbBoxDOMElement.innerHTML += htmlString
     console.log(imgBoxDOMElement)
+    
     
 }
 
@@ -101,5 +104,5 @@ leftArrowDOMElement.addEventListener('click', function() {
 
 })
 
-// aside thumbnail box
+
 
