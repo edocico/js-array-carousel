@@ -85,3 +85,8 @@ img {
 .d-none {
     display: none;
 }
+
+.image {
+    object-fit: cover;
+    aspect-ratio: 16/10;
+}

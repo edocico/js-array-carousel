@@ -63,7 +63,7 @@ fifthImageDOMElement.classList.add('d-none')
 // dichiaro una variabile contatore di immagine settata sul valore della prima immagine
 let ImageCounter = 0
 
-//controllo forward per il carosello
+//controllo forward per il carosello 
 rightArrowDOMElement.addEventListener('click', function () {
     // rimuovo l'immagine presente a schermo
     imageDOMElement[ImageCounter].classList.remove('d-block')
