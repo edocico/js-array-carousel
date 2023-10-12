@@ -38,6 +38,7 @@ header {
 .side-bar {
     border-left: 1px solid black;
     width: 250px;
+    overflow: auto;
 }
 
 h1 {
